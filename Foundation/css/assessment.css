@@ -1,0 +1,434 @@
+
+.act-holder{ 
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	width: 1280px; 
+	height: 576px; 
+	background-image: url(../img/assessment/sld-img02.jpg); 
+	background-repeat: no-repeat; 
+} 
+
+.sld-subheading{
+	padding: 23px;
+	font-weight: bold;
+}
+
+.act-choice-qst-holder{
+	display: block;
+	margin-top: 40px;
+    margin-left: 25px;
+}  
+
+.act-choice-subheading{
+	position: absolute;
+	top: 10px;
+	left: 8px;
+	padding-bottom: 30px;
+}
+
+.act-choice-holder{
+	display: flex; 
+	width: fit-content;
+	margin-top: 5px;
+}
+
+.act-choice-qst-img{
+	position: relative;
+    top: 33px;
+    left: 65px;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    line-height: 25px;
+    font-weight: 700;
+    background-color: #f35038;
+    border-radius: 25px;
+    text-align: center;
+} 
+
+.act-choice-qst-txt{
+	display: inline-block;
+    width: 800px; 
+	color:#333333;
+    padding: 10px 20px 10px 104px;
+	line-height: 24px;
+} 
+
+.act-choice-list-holder{
+	position: relative;
+    top: -4px;
+    left: 123px;
+    width: 695px; 
+}  
+
+.act-choice-img{
+	width: 25px;
+    height: 25px;
+	margin-right: 12px;
+    background-image: url(../img/assessment/sld-img10.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+} 
+
+.act-radio-img{
+	width: 25px;
+    height: 25px;
+	margin-right: 12px;
+    background-image: url(../img/assessment/sld-img08.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+} 
+
+.act-choice-txt{
+	position: relative;
+    top: 4px;
+    width: 712px;
+    color: #333333;
+    cursor: pointer;
+}
+.act-choice-submit{
+	    position: relative;
+    margin-top: 30px;
+    /* top: 410px; */
+    left: 128px;
+    width: 115px;
+    height: 33px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-image: url(../img/assessment/sld-img05.png);
+    background-repeat: no-repeat;
+    display: none;
+	
+}
+
+.act-choice-show-answer{
+	position: relative;
+    /* top: 486px; */
+    margin-top: 10px;
+    left: 782px;
+    width: 115px;
+    height: 33px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-image: url(../img/assessment/sld-img21.png);
+    background-repeat: no-repeat;
+    display: none;
+	
+}
+
+.act-choice-next{
+	position: relative;
+    /* top: 486px; */
+    margin-top: 10px;
+    left: 782px;
+    width: 115px;
+    height: 33px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-image: url(../img/assessment/sld-img06.png);
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.act-choice-response {
+	    position: relative;
+    /* top: 385px; */
+    margin-top: 20px;
+    left: 125px;
+    width: 740px;
+    height: 140px;
+    font-size: 16px;
+    background-color: #fff;
+    display: none;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    overflow: auto;
+} 
+
+.act-choice-response-color { 
+} 
+
+.act-choice-response-img{
+	display: inline-block;
+	margin-left: 12px;
+	width: 114px;
+	height: 78px;
+	vertical-align: middle;
+	background-image: url(../img/assessment/sld-img01.png);
+	background-position: 0px -120px;
+}
+
+
+.act-choice-response-correct-img{ 
+	background-image: url(../img/assessment/sld-img01.png);
+	background-position: 0px -120px; 
+}
+
+.act-choice-response-incorrect-img{ 
+	background-image: url(../img/assessment/sld-img01.png);
+	background-position: -140px -120px; 
+}
+	
+.act-choice-response-txt{
+	display: inline-block;
+    width: auto;
+    height: 27px;
+    line-height: 27px;
+}
+}
+
+
+.act-choice-default-state{
+	background-image:url(../img/assessment/sld-img10.png);
+	background-position: -127px 0px;
+} 
+
+.act-choice-selected-state{
+	background-image:url(../img/assessment/sld-img11.png); 
+}
+
+.act-radio-default-state{
+	background-image:url(../img/assessment/sld-img08.png); 
+}  
+
+.act-radio-selected-state{
+	background-image:url(../img/assessment/sld-img09.png); 
+}
+
+.act-choice-txt-selected-state{
+	color: #77A834;
+	font-weight:600;
+}
+
+.act-choice-txt-highlight{
+	/* padding:5px; */
+}
+
+.act-start-page{
+	position: absolute;
+    top: -15px;
+    left: 0px;
+    width: 1280px;
+    height: 576px;
+    background-image: url(../img/assessment/sld-img14.png);
+    background-repeat: no-repeat; 
+    z-index: 1;
+}
+
+    
+
+.act-start-heading{
+	position: absolute;
+    top: 200px;
+    left: 0px;
+    font-size: 48px;
+    font-family: Vi-Regular;
+    margin-left: 70px;
+    color: #333;
+}
+
+.act-start-txt{
+	position: absolute;
+    top: 264px;
+    left: 0px;
+    width: 730px;
+    color: #333;
+    font-size: 18px;
+    margin-left: 70px;
+}
+
+.act-start{
+	position: absolute;
+	top: 470px;
+	left: 970px;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	color: #fff; 
+	background-color: #00607F;
+	text-align: center;
+	cursor: pointer;
+}
+
+.act-goodluck{
+	position: absolute;
+    top: 384px;
+    left: 70px;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.act-score-page{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1280px;
+    height: 576px;
+    background-image: url(../img/assessment/sld-img03.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    z-index: 1;
+    display: none;
+}
+
+.act-score-heading{
+	position: absolute;
+    top: 185px;
+    left: 442px;
+    width: 400px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+}
+
+.act-score-txt01{
+	display:inline-block; 
+}
+
+.act-score-answer{
+	display:inline-block; 
+}
+
+.act-score-txt02{
+	display:inline-block; 
+}
+
+.act-score-percentage{
+	display:inline-block; 
+}
+
+.act-score-txt03{
+	display:inline-block; 
+}
+
+.act-score-attempts{
+	display:inline-block; 
+}
+
+.act-score-response{
+	position: absolute;
+	top: 386px;
+	left: 534px;
+	width: 438px;
+	text-align: center;
+	color: #fff;
+}
+
+.act-score-answer-holder, .act-score-percentage-holder, .act-score-attempts-holder, .act-score-answer-holder{
+	position: absolute;
+    top: 335px;
+    left: 500px;
+    width: auto;
+    height: auto;
+    font-size: 21px;
+    color: #fff;
+}
+
+.act-score-txt-holder{
+	position: absolute;
+	top: 215px;
+	left: 550px;
+	color: #fff;
+	text-align: center;
+}
+.act-score-retake{
+	position: absolute;
+    top: 485px;
+    left: 570px;
+    width: 150px;
+    height: 32px;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background-image: url(../img/assessment/sld-img07.png);
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.act-score-certificate{
+	position: absolute;
+	top: 490px;
+	left: 521px;
+	width: auto;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	background-color: #00607F;
+	padding: 0px 10px 0px 10px;
+	text-align: center;
+	cursor: pointer;
+	display:none;
+}  
+
+.act-print{
+	position: absolute;
+    top: 512px;
+    left: 565px;
+    width: 180px;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    background-color: #00607F;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 2;
+    display: none;
+}
+
+.act-send-email{
+	position: absolute;
+	top: 520px;
+	left: 906px;
+	width: auto;
+	height: 35px;
+	line-height: 35px;
+	color: #fff;
+	background-color: #00607F;
+	padding: 0px 10px 0px 10px;
+	text-align: center;
+	cursor: pointer;
+	z-index: 2;
+	display: none;
+}
+
+@media print{
+	 body{
+		visibility: hidden;
+	 }
+	 .to-print{
+		visibility: visible;
+		position: absolute;
+		top: 0;
+		left: 0;
+	 }
+}
+
+fntsze{
+	font-size:50px;
+}
+correct{
+	color:#77A834;
+	font-weight:600;
+}
+
+incorrect{
+	color:#DE2D33;
+	font-weight:600;
+}

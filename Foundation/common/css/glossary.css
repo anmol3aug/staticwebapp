@@ -1,0 +1,125 @@
+.glossary-container{
+	position: absolute;
+    top: 80px;
+    left: 46px;
+    width: 335px;
+    height: 565px;
+    background-color: #fff;
+    z-index: 2;
+    display: none;
+} 
+/*color change */
+.glossary-heading-holder{
+	width: auto;
+	padding: 5px;
+	height: 35px;
+	background-color: #DA5926;
+	border-bottom: 2px solid #80B9DD;
+}
+
+.glossary-heading{
+	position: absolute;
+    top: 8px;
+    left: 36px;
+    color: #fff;
+    font-size: 26px;
+    font-family: arial;
+}
+
+.glossary-close{
+	position: absolute;
+    top: 4px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url(../../common/img/close-icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.glossary-search-holder{
+	padding: 5px;
+}
+
+.glossary-word{
+	border-bottom: 1px solid #e7edf6;
+	padding: 6px;
+	list-style: none;
+}
+
+.glossary-word:hover{
+	background-color: #e7edf6;
+} 
+
+.glossary-list{
+	position: absolute;
+	top: 80px;
+	left: -30px;
+	width: 270px;
+	height: 180px;
+	overflow: auto;
+}
+/*color change */
+.glossary-meaning{
+	position: absolute;
+    top: 300px;
+    left: 0px;
+    width: 315px;
+    height: 259px;
+    padding: 10px;
+    overflow: auto;
+    font-size: 16px; 
+    color: #fff;
+    background-color: #F39C1F;
+}
+
+.glossary-icon {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    width: 290px;
+    height: 40px; 
+    background-image: url(../../common/img/glossary-icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+}
+
+.search-input{
+	width: 587px;
+	font-size: 20px;
+}
+
+#glossary-select{
+	position: absolute;
+    top: 47px;
+    width: inherit;
+    height: 312px;
+    overflow: hidden;
+    border: none;
+}
+
+option:hover { 
+	background-color:#d45f19; 
+} 
+
+option { 
+	color:#fff; 
+}
+/*color change */
+option { 
+	background-color:#F39C1F; 
+} 
+
+select.decorated option:hover {
+    background-color:#d45f19;
+}
+
+option:checked {
+    background-color:#d45f19;
+}

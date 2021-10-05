@@ -1,0 +1,43 @@
+[  
+   {  
+      "word":"Encryption",
+      "meaning":"The process of obscuring information to make it unreadable without special knowledge."
+	  
+   },
+   {  
+      "word":"Password",
+      "meaning":"A form of secret authentication data that is used to control access to a resource."
+   },
+   {  
+      "word":"Security Incident",
+      "meaning":"Any event that compromises the confidentiality, integrity and availability of an organization’s information assets."
+   },
+   {  
+      "word":"Virus",
+      "meaning":"A self-replicating computer program that spreads by inserting copies of itself into other executable code or documents."
+   },
+   {  
+      "word":"E-Mail",
+      "meaning":"Email (Electronic mail), are used for exchanging digital messages among users via computer networks."
+   },
+   {  
+      "word":"Internet",
+      "meaning":"A computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange."
+   },
+   {  
+      "word":"Tailgate",
+      "meaning":"The security breach that occurs when an unauthorized person slips past a checkpoint undetected, by following an authorized user through an open door. (A similar breach is piggybacking, where the authorized user is complicit and holds the door open.)"
+   },
+   {  
+      "word":"Confidentiality",
+      "meaning":"The state of keeping or being kept secret or private."
+   },
+   {  
+      "word":"Integrity",
+      "meaning":"Internal consistency or lack of corruption in electronic data."
+   },
+   {  
+      "word":"Availability",
+      "meaning":"The quality of being able to be used or obtained."
+   }   
+]

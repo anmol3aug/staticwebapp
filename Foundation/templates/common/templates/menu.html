@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Menu</title>
+      <link rel="stylesheet" href="common/css/menu.css">  
+   </head>
+   <body>
+		<div class="menu" >
+			<div class="menu-icon"></div>
+			<div class="menu-heading"></div>
+			<div class="menu-close" ng-click="menuCloseClick($event)"></div>
+			<div class="menu-holder"> 
+				<!-- <select size="4" onChange="getComboA(this)">
+					<option ng-cloak class="menu-word" clicked="false" id="menu-list{{name.id}}" class="menu-list" ng-repeat="name in templates" ng-click="menuClick(name.url,name.transcript,$index );" ng-bind-html="name.name | trustHtml">
+					{{name.name}}
+					</option>
+				</select> -->
+				<select id="menu-select" ng-attr-size="5" ng-cloak ng-model="selected" ng-change="changeListItem(selected)" ng-click="menuClick(selected.url,selected.transcript,selected.id,selected.name,selected.subheading)" ng-options="y.name for (x, y) in templates" > 
+				</select>
+			</div>
+		</div>
+		<script>  
+            $( document ).ready(function() {     
+				<!-- var $container = $(".container");  -->
+				<!-- var __dragFix = new DragFix($container); -->
+				<!-- $(".menu-holder").parent().draggable({   -->
+					<!-- start: function(event, ui) { -->
+						<!-- __dragFix.startDrag($(this),ui); -->
+						<!-- $(this).css("z-index",1000) -->
+					<!-- }, -->
+					<!-- drag: function(event, ui) { -->
+					 <!-- __dragFix.drag(ui); -->
+					 <!-- __dragFix.dragRestrict(ui); -->
+
+					<!-- },stop: function( event, ui ) { -->
+						<!-- $(this).css("z-index",1) -->
+					<!-- } -->
+				<!-- });   -->
+				//new code 19-06-18
+				var clearTime;
+				clearTimeout(clearTime);
+				clearTime = setTimeout(function(){
+					setMenuAttr(); 
+					setScormMenu();
+					clearTimeout(clearTime);
+				}, 1000);
+				
+            });
+			function setScormMenu(){
+				//scorm 1.2
+				if(__gscormVersion){ 
+					__gbookmark = getBookmarkNo().split(":")[0]; 
+					if(__gbookmark!="completed"){
+						var count = Number(__gbookmark);
+						for(var i=0; i<count; i++){ 
+							$("#menu-list"+(i)).attr("clicked", "true");
+							$("#menu-list"+(i)).addClass("menu-list-check");
+							$("#menu-list" + (i)).css("color", "#2196F3");
+						}
+					} 
+				}  
+				// end code
+			}
+            function setMenuAttr(){
+				$("#menu-select").find("option").each(function( index ) { 
+					if(index==0){
+						$( this ).remove();
+					}
+					if(index!=0){
+						$( this ).attr("id","menu-list"+(index-1));
+						$( this ).attr("clicked","false"); 
+						$( this ).attr("class","menu-word"); 
+					} 
+				});
+			}
+			$('select').on('mouseenter','option',function(e) {
+				 $(this).attr("title", $(this).text())
+			});
+			//$('select').selectBoxIt();
+         </script>
+   </body>
+</html>

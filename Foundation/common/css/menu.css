@@ -1,0 +1,131 @@
+/*color change */
+.menu{
+	position: absolute;
+    top: 80px;
+    left: 46px;
+    width: 335px;
+    height: 45px;
+    background-color: #DA5926;
+	border-bottom: 2px solid #80B9DD;
+    display: none;
+    z-index: 2;
+}
+
+.menu-holder{
+	position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 335px;
+    height: 534px;
+    border-style: none;
+}
+
+.menu-icon{
+	position: absolute;
+    top: 5px;
+    left: 0px;
+    width: 290px;
+    height: 40px; 
+    background-image: url(../../common/img/menu-icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+}
+
+
+.menu-heading{
+	position: absolute;
+    top: 9px;
+    left: 36px;
+    color: #fff;
+    font-size: 26px;
+    font-family: arial;
+} 
+.menu-word{ 
+}
+
+.menu-list {
+}
+
+.menu-list-check{
+	list-style-image: url(../../common/img/menu-list-check.png);
+}
+/*color change */
+.menu-list-focus{
+	 background-color: #DA5926;
+}
+
+.menu-item{ 
+	position: absolute; 
+	top: 30px;
+}
+
+.menu-close{
+	position: absolute;
+	top: 4px;
+	left: 300px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	background-image: url(../../common/img/close-icon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.menu-word:hover {
+    
+}
+
+#menu-list0{
+	list-style-image: url(../../common/img/menu-list-check.png);
+	 
+}
+/*color change */
+#menu-select {
+	position: absolute;
+	top:2px;
+    width: inherit;
+    height: inherit;
+    border: none;
+    background-color: #F39C1F;
+	overflow: auto;
+}
+	
+option {
+	padding: 6px;
+    padding-left: 15px;
+    font-size: 16px;
+    /* border-bottom: 1px solid #ffffff47;
+    border-top: 0.5px solid #ffffff47; */
+    /* white-space: pre-wrap; */
+}
+
+@media only screen and (orientation:landscape) { 
+select
+ {  
+   size: 5;
+ }
+}
+
+#menu-list0, #menu-list1, #menu-list5, #menu-list28 , #menu-list34{
+	font-weight:bold;
+	font-size:17px;
+}
+/*color change */
+select option:hover,
+    select option:focus,
+    select option:active {
+        background: linear-gradient(#F39C1F, #F39C1F);
+        background-color: #00000000 !important; /* for IE */
+        color: #C00000 !important;
+    }
+/*color change */
+    select option:checked {
+        background: linear-gradient(#DA5926, #DA5926);
+        background-color: #d6d6d6 !important; /* for IE */
+        color: #C00000 !important;
+    }

@@ -1,0 +1,239 @@
+[
+	{
+		"type": "singleChoice",
+		"no": "1",
+		"question": "Securing a system’s configuration to <b>minimize vulnerabilities</b> is called",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "Softening"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "Strengthening"
+			}, {
+				"id": "3",
+				"ans": "true",
+				"text": "Hardening"
+			}, {
+				"id": "4",
+				"ans": "false",
+				"text": "Backup"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/><b>Hardening</b> is one the key components of Security and Configuration management. System Hardening practices secure a system’s configuration to minimize vulnerabilities.",
+			"<incorrect>You are Incorrect!</incorrect><br/><b>Hardening</b> is one the key components of Security and Configuration management. System Hardening practices secure a system’s configuration to minimize vulnerabilities."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "2",
+		"question": "How many risk classifications are there to identify IT solution in MICS scope at ABI?",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "4"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "6"
+			}, {
+				"id": "3",
+				"ans": "false",
+				"text": "3"
+			}, {
+				"id": "4",
+				"ans": "true",
+				"text": "5"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/>At ABI, IT solutions can be classified into 5 different types – <br/>SOX Audit Scope or Statutory Reporting scope, Business Impact analysis, Data Privacy relevant, Crown Jewels and External Vulnerabilities.",
+			"<incorrect>You are Incorrect!</incorrect><br/>At ABI, IT solutions can be classified into 5 different types – <br/>SOX Audit Scope or Statutory Reporting scope, Business Impact analysis, Data Privacy relevant, Crown Jewels and External Vulnerabilities."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "3",
+		"question": "A <b>scheduled program</b> that is assigned to run on an IT system without further user interaction is called?",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "Batch trades"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "Batch activities"
+			}, {
+				"id": "3",
+				"ans": "true",
+				"text": "Batch jobs"
+			}, {
+				"id": "4",
+				"ans": "false",
+				"text": "Batch missions"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/>A <b>batch job</b> is a scheduled program that runs without user intervention and is frequently used to automate tasks that need to be performed on a regular basis.",
+			"<incorrect>You are Incorrect!</incorrect><br/>A <b>batch job</b> is a scheduled program that runs without user intervention and is frequently used to automate tasks that need to be performed on a regular basis."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "4",
+		"question": "A basic control that prevents or detects errors and irregularities by assigning the responsibility for initiating and recording transactions to separate individuals is ______?",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "Periodic access review"
+			}, {
+				"id": "2",
+				"ans": "true",
+				"text": "Segregation of duties"
+			}, {
+				"id": "3",
+				"ans": "false",
+				"text": "Single sign on"
+			}, {
+				"id": "4",
+				"ans": "false",
+				"text": "Multi factor authentication"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/><b>Segregation/separation of duties</b> is commonly used in large IT organizations so that no single person is in a position to introduce fraudulent or malicious code without detection. It is a basic control that prevents or detects errors and irregularities by assigning to separate individuals the responsibility for initiating and recording transactions and for the custody of assets.",
+			"<incorrect>You are Incorrect!</incorrect><br/><b>Segregation/separation of duties</b> is commonly used in large IT organizations so that no single person is in a position to introduce fraudulent or malicious code without detection. It is a basic control that prevents or detects errors and irregularities by assigning to separate individuals the responsibility for initiating and recording transactions and for the custody of assets."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "5",
+		"question": "Illustrative representation of the IT solution showcasing the different interfaces, network segmentations, access points, hosts, etc. is called",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "Detailed Inventory"
+			}, {
+				"id": "2",
+				"ans": "true",
+				"text": "Solution Architecture diagram or Solution Technical map"
+			}, {
+				"id": "3",
+				"ans": "false",
+				"text": "Control inventory"
+			}, {
+				"id": "4",
+				"ans": "false",
+				"text": "Solutions Inventory"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/><b>Technical map</b> is a diagram of the IT solution containing the different interfaces, network segmentations, access points, hosts etc.",
+			"<incorrect>You are Incorrect!</incorrect><br/><b>Technical map</b> is a diagram of the IT solution containing the different interfaces, network segmentations, access points, hosts etc."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "6",
+		"question": "A <b>Software license management tool</b> enables ABI to maintain software compliance.",
+		"options": [{
+				"id": "1",
+				"ans": "true",
+				"text": "True"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "False"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/>A <b>Software license management tool helps ABI to analyze its license posture across vendors</b>. It is critical to manage and monitor all enterprise licenses to ensure compliance against agreed licensing terms.",
+			"<incorrect>You are Incorrect!</incorrect><br/>A <b>Software license management tool helps ABI to analyze its license posture across vendors</b>. It is critical to manage and monitor all enterprise licenses to ensure compliance against agreed licensing terms."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "7",
+		"question": "A common technique to implement network security is to <b>segment an organization’s network</b> into separate zones that can be separately controlled, monitored and protected.",
+		"options": [{
+				"id": "1",
+				"ans": "true",
+				"text": "True"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "False"
+			} 
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/><b>Network segmentation</b> in computer networking a common technique to implement network security by <b>segmenting an organization’s network into separate zones</b> that can be separately controlled, monitored and protected.",
+			"<incorrect>You are Incorrect!</incorrect><br/><b>Network segmentation</b> in computer networking a common technique to implement network security by <b>segmenting an organization’s network into separate zones</b> that can be separately controlled, monitored and protected."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "8",
+		"question": "<b>Principle of least privilege</b> means giving users the least minimum level of access required.",
+		"options": [{
+				"id": "1",
+				"ans": "true",
+				"text": "True"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "False"
+			} 
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/>Access management manages users’ access to ABI IT systems. It is based on the <b>principles of least privilege – giving users the least minimum level of access required</b> and segregation of duties – ensuring that users’ responsibilities to carry out a task are shared and no individual has too much authority to perform activities without being checked.",
+			"<incorrect>You are Incorrect!</incorrect><br/>Access management manages users’ access to ABI IT systems. It is based on the <b>principles of least privilege – giving users the least minimum level of access required</b> and segregation of duties – ensuring that users’ responsibilities to carry out a task are shared and no individual has too much authority to perform activities without being checked."
+		]
+	},{
+		"type": "singleChoice",
+		"no": "9",
+		"question": "Consider the following SAP tasks involving RPA bots - PO (Purchase Order) creation and GR (Goods Received) creation. Which of the following qualifies for segregation of duties conflict check?<br>I. Two robots handle actions of one end user<br>II. Hybrid collaboration between robot and end user<br>III. One robot to process actions of end user<br>IV. End user interacts directly with the system",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "I, III and IV only"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "I, II and III only"
+			}, {
+				"id": "3",
+				"ans": "false",
+				"text": "I, II and IV only"
+			}, {
+				"id": "4",
+				"ans": "true",
+				"text": "I, II, III and IV"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/><b>Segregation of duties</b> is a basic internal control that prevents or detects errors and irregularities by <b>assigning the responsibility for initiating and recording transactions to separate individuals or bots.</b>",
+			"<incorrect>You are Incorrect!</incorrect><br/><b>Segregation of duties</b> is a basic internal control that prevents or detects errors and irregularities by <b>assigning the responsibility for initiating and recording transactions to separate individuals or bots.</b>"
+		]
+	},{
+		"type": "singleChoice",
+		"no": "10",
+		"question": "10. Some of the best practices for secure user authentication include?",
+		"options": [{
+				"id": "1",
+				"ans": "false",
+				"text": "Multi factor authentication"
+			}, {
+				"id": "2",
+				"ans": "false",
+				"text": "Single Sign on"
+			}, {
+				"id": "3",
+				"ans": "false",
+				"text": "Unique ID and password"
+			}, {
+				"id": "4",
+				"ans": "true",
+				"text": "All of the above"
+			}
+		],
+		"response": [
+			"<correct>You are Correct!</correct><br/>At ABInBev, we have controls around <b>password management</b>, anti-virus, <b>Multi-Factor-Authentication</b> and patch & vulnerability management in place to ensure security risks can be managed effectively and the security posture of systems is maintained.",
+			"<incorrect>You are Incorrect!</incorrect><br/>At ABInBev, we have controls around <b>password management</b>, anti-virus, <b>Multi-Factor-Authentication</b> and patch & vulnerability management in place to ensure security risks can be managed effectively and the security posture of systems is maintained."
+		]
+	}
+]

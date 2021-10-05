@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Glossary</title>
+      <link rel="stylesheet" href="common/css/glossary.css">  
+   </head>
+   <body>
+      <div class="glossary-container">
+		<div class="glossary-heading-holder">
+			<div class="glossary-icon"></div>
+			<div class="glossary-heading"></div>
+			<div class="glossary-close" ng-click="glossaryCloseClick($event)"></div>
+		 </div>  
+			 <select id="glossary-select" ng-attr-size="3" ng-cloak ng-model="selected" ng-change="glossaryFunc(selected)" ng-options="y.word for (x, y) in glossary"></select>
+			 <div ng-cloak class="glossary-meaning">{{selected.meaning}}</div> 
+		</div> 
+         <script>
+          angular.element( document ).ready(function() {
+				<!-- var $container = $(".container");  -->
+				<!-- var __dragFix = new DragFix($container); -->
+				<!-- $(".glossary-container").draggable({   -->
+					<!-- start: function(event, ui) { -->
+						<!-- __dragFix.startDrag($(this),ui); -->
+						<!-- $(this).css("z-index",1000) -->
+					<!-- }, -->
+					<!-- drag: function(event, ui) { -->
+					 <!-- __dragFix.drag(ui); -->
+					 <!-- __dragFix.dragRestrict(ui); -->
+
+					<!-- },stop: function( event, ui ) { -->
+						<!-- $(this).css("z-index",1) -->
+					<!-- } -->
+				<!-- });  --> 
+				$("#glossary-select").find("option").each(function( index ) { 
+					if(index==0){ 
+						$( this ).remove();
+					} 
+				});
+            });
+            
+         </script>
+      
+   </body>
+</html>

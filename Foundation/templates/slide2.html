@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>slide01</title>
+	<link rel="stylesheet" type="text/css" href="css/slide02.css">
+	<style>
+		.sld-act-holder{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 1280px;
+			height: 576px;
+			background-image: url(img/slide02/sld-img01.png);
+			background-repeat: no-repeat;
+			overflow: hidden;  
+		}
+		.sld-subheading {
+			position: absolute;
+			top: 35px;
+			left: 65px;
+			    line-height: 25px;
+		} 
+		
+		.sld-instruction {
+			position: absolute;
+			top: 70px;
+			left: 70px; 
+			display: none;
+		} 
+		 
+		.sld-img{
+			position: absolute;
+			color: #333;
+			    width: 220px;
+    height: 84px; 
+			background-repeat: no-repeat; 
+			background-position:center;
+		}
+		
+		#sld-img01{ 
+		     top: 260px;
+    left: 82px;
+    background-image: url(img/slide02/sld-img02.png);
+    
+	
+		}
+		#sld-img01:hover{
+		 background-image: url(img/slide02/sld-img03.png); 
+	}
+		#sld-img02{ 
+			    top: 260px;
+    left: 314px;
+    background-image: url(img/slide02/sld-img05.png);
+   
+		}
+		#sld-img02:hover{
+		 background-image: url(img/slide02/sld-img06.png); 
+	}
+		#sld-img03{ 
+			top: 260px;
+    left: 546px;
+			background-image: url(img/slide02/sld-img08.png);
+   
+		}
+		#sld-img03:hover{
+			 background-image: url(img/slide02/sld-img09.png); 
+		}
+		#sld-img04{ 
+			top: 260px;
+    left: 777px;
+			background-image: url(img/slide02/sld-img11.png);
+   
+		}
+		#sld-img04:hover{
+			background-image: url(img/slide02/sld-img12.png); 
+		}	
+		#sld-img05{ 
+			top: 260px;
+    left: 1009px;
+    background-image: url(img/slide02/sld-img14.png);
+   
+		}
+		#sld-img05:hover{
+		 background-image: url(img/slide02/sld-img15.png); 
+	}
+		#sld-img06{ 
+			    top: 376px;
+    left: 82px;
+    background-image: url(img/slide02/sld-img17.png);
+    
+		}
+		#sld-img06:hover{
+		 background-image: url(img/slide02/sld-img18.png); 
+	}
+		#sld-img07{ 
+	       top: 376px;
+    left: 314px;
+    background-image: url(img/slide02/sld-img20.png);
+   
+		}
+		#sld-img07:hover{
+		 background-image: url(img/slide02/sld-img21.png); 
+	}
+		#sld-img08{ 
+		   top: 376px;
+    left: 547px;
+    background-image: url(img/slide02/sld-img23.png);
+   
+		}
+		#sld-img08:hover{
+		 background-image: url(img/slide02/sld-img24.png); 
+	}
+		#sld-img09{ 
+		top: 376px;
+    left: 777px;
+    background-image: url(img/slide02/sld-img26.png);
+    
+		}
+		#sld-img09:hover{
+		 background-image: url(img/slide02/sld-img27.png); 
+	}
+	
+	#sld-img10{ 
+		    top: 376px;
+    left: 1008px;
+    background-image: url(img/slide02/sld-img29.png);
+    
+		}
+		#sld-img10:hover{
+		 background-image: url(img/slide02/sld-img30.png); 
+	}
+		 #video{
+		    position: absolute;
+    top: 130px;
+    left: 724px;
+    width: 534px;
+    height: 300px;
+    border-radius: 10px;
+	display:none;
+		 }
+		
+		clr{
+			color:#FF0B0B;
+		}
+		.close-btn{
+			top: 30px;
+			left: 1220px;
+			background-image: url(img/slide02/sld-img32.png);
+			background-repeat: no-repeat;
+			cursor:pointer;
+		}
+		
+		.iframe-holder{
+			 display:none;
+		}
+	</style>
+</head>
+
+<body> 
+	<!-- Interactive audio -->
+	<audio controls autoplay style="display:none" id="audio-act">	 
+		Your browser does not support the audio element.
+	</audio>
+	<div class="sld-holder" ng-controller="preloading" json="json/slide02.json">
+		<!-- First slide play button for mobile or video--> 
+		<div class="sld-play-audio" style="display:none;"></div>
+		<!-- preload -->
+		<div class="preloading-holder" ng-if="progress !== 100">
+			<!-- <progress class="" value="{{progress}}" max="100">{{progress | number:0}}%</progress> -->
+			<div class="preloading-circle">{{progress | number:0}}%</div>
+		</div>
+		 
+		<!-- slide content -->
+		<div class="slide-content" ng-show="loaded">
+			<div class="sld-subheading"><b></b><br/></div>
+			<div class="sld-holder">
+				<div class="sld-act-holder">
+					<div class="sld-img" id="sld-img01" no="1"></div>
+					<div class="sld-img" id="sld-img02" no="2"></div>
+					<div class="sld-img" id="sld-img03" no="3"></div>
+					<div class="sld-img" id="sld-img04" no="4"></div> 
+					<div class="sld-img" id="sld-img05" no="5"></div>
+					<div class="sld-img" id="sld-img06" no="6"></div>
+					<div class="sld-img" id="sld-img07" no="7"></div>
+					<div class="sld-img" id="sld-img08" no="8"></div>
+					<div class="sld-img" id="sld-img09" no="9"></div>
+					<div class="sld-img" id="sld-img10" no="10"></div>
+					
+				</div>
+			</div>
+		<div class="sld-instruction"></div>  
+		<video width="592" height="335" id="video" controls> 
+			Your browser does not support the video tag.
+		</video> 
+		<div class="iframe-holder" style="position:absolute; width:1280px; height:576px; overflow:hidden;z-index:1;">
+			<iframe id="myiframe" style="position:absolute; width:1280px; height:576px"></iframe>
+			<div class="close-btn" style="position:absolute; width:30px; height:30px"></div> 
+		</div>
+	<script>
+		//template
+		__gjsonfilePath = "json/slide02.json" 
+		var refID;
+		var __triggerOnce = true;
+	
+		$(document).ready(function () {  
+			//template
+			loadAudio("audio/slide02.mp3");  
+			firstSlidePlayButton();			
+			cancelAnimationFrame(refID)
+			refID = requestAnimationFrame(animationReady)
+			
+		} );
+		//template
+		function getCurTime() {
+			if( __audio.currentTime >= 5.300 && __audio.currentTime <= 6.300){
+				if(__triggerOnce){
+					__triggerOnce = false;
+					__audio.pause(); 
+					$(".pause-icn").attr("class","play-icn"); 
+					$(".play-icn").css('opacity', 0.2); 
+					$(".sound-on-icn").css('opacity', 0.2); 
+					$(".sound-off-icn").css('opacity', 0.2); 
+					$(".pause-disable").show();
+					$(".mute-disable").show();
+					$(".act-choice-list-holder-patch").hide(); 
+					actInit();
+					$(".sld-img").css("cursor","pointer");
+					$(".sld-instruction").show();
+				};
+			};
+		};
+		
+		function firstSlidePlayButton(){
+			if(__gfirstSlidePlayButton){
+				__gfirstSlidePlayButton = false;
+				__playAudioButton();
+			}; 
+		}
+		
+		function loadAudio(sndName){ 
+			__audio = document.getElementById("audio");  
+			__audio.src = sndName;  
+			__audio.load(); 
+		};
+		function animationReady() { 
+			console.log("not cleared-testing");
+			refID = requestAnimationFrame(animationReady)
+			if(__preloadComplete){
+				__preloadComplete = false;
+				console.log("cleared-testing");
+				cancelAnimationFrame(refID);   
+				 playAnimationAudio()  
+			} 
+		}
+		function playAnimationAudio(){
+			var playPromise = __audio.play(); 
+			if (playPromise !== undefined) {
+			  playPromise.then(function() {   
+					__audio.play(); 
+			  }).catch(function(error) {
+			  });
+			}
+			__audio.removeEventListener("timeupdate", getCurTime);  
+			__audio.addEventListener("timeupdate", getCurTime);
+			__ggetCurTime = getCurTime;
+		}
+		function isPlaying(audio) {
+			return !audio.paused;
+		}
+		//activity
+		function actInit(){   
+			var src;
+			var imgArr = ["sld-img04","sld-img07","sld-img10","sld-img13","sld-img16","sld-img19","sld-img22","sld-img25","sld-img28","sld-img31"]
+		console.log("clicked")
+			$(".sld-img").on("click", function(){
+				console.log("clicked")
+				var idNO = $(this).attr("id").split("sld-img")[1];
+				if($(this).attr("click") != "false"){
+					$(this).attr("isDone", "true");
+					$(this).css("background-image","url(img/slide02/"+imgArr[idNO-1]+".png)")
+				} 
+				
+				$("#sld-txt" + idNO).show();  
+				//audio
+				var audioAct = document.getElementById("audio-act");
+				audioAct.src = 'templates/sounds/popup'+$(this).attr("no")+'_1.mp3'; 
+				audioAct.play();
+				audioAct.muted = true; 
+				audioAct.onended = function() {
+					checkComplete($(this));
+				};  
+				//video
+				<!-- var src = 'video/video'+$(this).attr("no")+'.mp4';  -->
+				<!-- $("#video").attr("src", src); -->
+				<!-- $("#video").get(0).play(); -->
+				<!-- $('#video').on('ended',function(){ -->
+				  <!-- console.log('Video has ended!'); -->
+				  <!-- checkComplete($(this)); -->
+				<!-- });    -->
+				$(".iframe-holder").show(500); 
+				var url = 'templates/popup'+$(this).attr("no")+'.html';  
+				//var url = '/templates/popup1.html';  
+				console.log(url+"---url");
+				
+				$("#myiframe").attr("src", url)
+			});  
+			$(".close-btn").on("click", function(){
+				$(".iframe-holder").hide();
+				$("#myiframe").attr("src", ""); 
+			})
+		}
+		
+		function goFullscreen(id) {
+				  var element = document.getElementById(id);       
+				  if (element.mozRequestFullScreen) {
+					element.mozRequestFullScreen();
+				  } else if (element.webkitRequestFullScreen) {
+					element.webkitRequestFullScreen();
+				  }  
+				}
+		var playOnce = true;
+		function checkComplete(divName){
+			var isDoneBOL = true; 
+			divName.attr("isdone", "true");
+			$(".sld-img").each(function( index ) {
+				if($(this).attr("isdone") != "true"){
+					isDoneBOL = false;
+					return false;
+				}
+			});
+			
+			if(isDoneBOL){
+				if(playOnce){
+					playOnce = false; 
+					__audio.play();					
+				}
+			}
+		}
+	</script>
+</body>
+</html>

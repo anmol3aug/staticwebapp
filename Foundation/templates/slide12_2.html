@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>slide01</title>
+	<link rel="stylesheet" type="text/css" href="css/slide12_2.css">
+	<style>
+		.sld-subheading {
+			position: absolute;
+			top: 48px;
+			left: 85px;
+			line-height: 18px;
+		}
+	</style>
+</head>
+
+<body> 
+	<!-- Interactive audio -->
+	<audio controls autoplay style="display:none" id="audio-act">	 
+		Your browser does not support the audio element.
+	</audio>
+	<div class="sld-holder" ng-controller="preloading" json="json/preload12_2.json">
+		<!-- First slide play button for mobile or video--> 
+		<div class="sld-play-audio" style="display:none;"></div>
+		<!-- preload -->
+		<div class="preloading-holder" ng-if="progress !== 100">
+			<!-- <progress class="" value="{{progress}}" max="100">{{progress | number:0}}%</progress> -->
+			<div class="preloading-circle">{{progress | number:0}}%</div>
+		</div>
+		 
+		<!-- slide content -->
+		<div class="slide-content" ng-show="loaded">
+			<div class="sld-subheading"><b>Knowledge Check</b><br/><br/>Match the advantages of license management to their header names. Drag and drop the option to their respective header names.</div>  
+			<div class="sld-holder">
+				<div class="sld-act-holder">  
+					<div class="sld-dragD" id="sld-dragD01">Compliance Management</div> 
+					<div class="sld-dragD" id="sld-dragD02">License Utilization</div>  
+					
+					<div class="sld-txt-holder">
+						<div class="sld-txt" id="sld-txt01">Monitoring any variances in licenses across ABI</div> 
+						<div class="sld-txt" id="sld-txt02">Identification of over or under utilization of licenses</div>  
+					</div> 
+					
+					<div class="sld-drop" ans="groupA" id="sld-drop01" dragname="undefined"></div>  
+					<div class="sld-drop" ans="groupB" id="sld-drop02" dragname="undefined"></div>   
+
+					<div class="sld-drag" ans="groupA" showAns="sld-drop01" id="sld-drag01">Compliance Management</div> 
+					<div class="sld-drag" ans="groupB" showAns="sld-drop02" id="sld-drag02">License Utilization</div>  
+					
+					<div class="act-submitBT">Submit</div> 
+					<div class="act-answerBT">View Answers</div> 
+					<div class="act-retryBT">Try Again</div> 
+					<div class="act-welldone">Well Done</div> 
+					<div class="act-retryAnswer">That is not correct. Click on ‘Try Again’ to retry</div>
+					<div class="act-showanswer">That is not correct. Click on ‘View Answers’ to view the correct answers</div>
+				</div>
+			</div>
+			<div class="sld-instruction"></div> 
+		</div>  
+	</div>
+	<script>
+		//template
+		__gjsonfilePath = "json/preload10.json" 
+		var refID;
+		var __triggerOnce = true;
+		$(document).ready(function () {  
+			//template
+			loadAudio("audio/slide12_2.mp3");  
+			firstSlidePlayButton();			
+			cancelAnimationFrame(refID)
+			refID = requestAnimationFrame(animationReady);
+		} );
+		//template
+		function getCurTime() {
+			if( __audio.currentTime >= 5.500 && __audio.currentTime <= 6.500){
+				if(__triggerOnce){
+					__triggerOnce = false;
+					__audio.pause(); 
+					$(".pause-icn").attr("class","play-icn"); 
+					$(".play-icn").css('opacity', 0.2); 
+					$(".pause-disable").show();
+				};
+			};
+		};
+		
+		function firstSlidePlayButton(){
+			if(__gfirstSlidePlayButton){
+				__gfirstSlidePlayButton = false;
+				__playAudioButton();
+			}; 
+		}
+		
+		function loadAudio(sndName){ 
+			__audio = document.getElementById("audio");  
+			__audio.src = sndName;  
+			__audio.load(); 
+		};
+		function animationReady() { 
+			console.log("not cleared-testing");
+			refID = requestAnimationFrame(animationReady)
+			if(__preloadComplete){
+				__preloadComplete = false;
+				console.log("cleared-testing");
+				cancelAnimationFrame(refID);  
+				 playAnimationAudio();
+				 actInit();
+			} 
+		}
+		function playAnimationAudio(){
+			var playPromise = __audio.play(); 
+			if (playPromise !== undefined) {
+			  playPromise.then(function() {   
+					__audio.play(); 
+			  }).catch(function(error) {
+			  });
+			}
+			__audio.removeEventListener("timeupdate", getCurTime);  
+			__audio.addEventListener("timeupdate", getCurTime);
+			__ggetCurTime = getCurTime;
+		}
+		function isPlaying(audio) {
+			return !audio.paused;
+		}
+		//activity
+		var dropBOL = false;  
+		function actInit(){
+			submitClick();
+			answerClick();  
+			retryClick();
+			var droptriggerOnce = true;
+			var $container = $(".container"); 
+			__dragFix = new DragFix($container); 
+			$(".sld-drag").css("position","absolute");
+			$(".sld-drag").css("cursor","pointer");
+			$(".sld-drag").draggable({  
+				start: function(event, ui) {
+					dropBOL = false;
+					droptriggerOnce = true;
+					__dragFix.startDrag($(this),ui); 
+					var dropName = $(this).attr("dropname");  
+					$("#"+dropName).attr("dragname", "undefined");
+					$(this).attr("dropname", "undefined");
+				},
+				drag: function(event, ui) {
+				 __dragFix.drag(ui);
+				 __dragFix.dragRestrict(ui);
+
+				},stop: function( event, ui ) { 
+					if ( !dropBOL ) {
+						$( this ).animate( {
+							left: $( this ).attr( 'oriLeft' ),
+							top: $( this ).attr( 'oriTop' )
+						}, 500, function () { 
+						} )
+						checkSubmitBT();
+					}
+				},create: function ( event, ui ) { 
+					 initDragPosition();
+				}
+			});  
+			
+			$(".sld-drop").droppable({
+				over: function(event, ui) {
+					console.log("over");  
+				},
+				out: function(event, ui) {
+					console.log("out");  
+				},
+			  drop: function( event, ui ) {  
+				var draggableId = ui.draggable.attr("id");  
+					var dropID = $( this ).attr("id");
+				 if(droptriggerOnce && $( this ).attr("dragname" ) == "undefined"){
+					droptriggerOnce = false; 
+					dropBOL = true;
+					var dropName = $("#"+dropID);
+					var dragName = $( this ).attr("dragname" );   
+
+					$( this ).attr("dragname", "undefined");
+					
+					$( this ).attr("idNO", $("#"+dragName).attr("ans"));
+					
+					var drag = $("#"+draggableId); 
+					//drag.draggable('disable');
+					drag.css("position", "absolute"); 
+					drag.css("top", parseInt($( this ).css("top")) + $( this ).outerHeight()/2 - drag.outerHeight()/2+10); 
+					drag.css("left", parseInt($( this ).css("left")) + $( this ).outerWidth()/2 - drag.outerWidth()/2);
+					
+					$("#"+draggableId).attr("dropname", dropName.attr("id"));
+					$("#"+draggableId).attr("group", $( this ).attr("ans"));
+					dropName.attr("dragname", $("#"+draggableId).attr("id"));
+					checkSubmitBT();
+				 } 
+			  }
+			});
+		}
+		
+		function initDragPosition(){  
+			var dragPosArr = [[266,909], [212,909]];
+			$(".sld-drag").each(function(i){
+				$( this ).attr( 'oriLeft', dragPosArr[i][1] );
+				$( this ).attr( 'oriTop', dragPosArr[i][0] );
+			});
+		}
+		
+		function checkSubmitBT(){
+			var dropBOL = false; 
+			$(".sld-drop").each(function(){
+				if($(this).attr("dragname") != "undefined"){
+					dropBOL = true;
+				}else{
+					dropBOL = false;
+					return false;
+				} 
+			});
+			if(dropBOL){
+				console.log("submit show")
+				$(".act-submitBT").show();
+			}else{
+				console.log("submit hide");
+				$(".act-submitBT").hide();
+			}
+		}
+		
+		function submitClick(){ 
+			$(".act-submitBT").on("click", function(){
+				$(this).hide();
+				checkValidation();
+			})
+		} 
+		
+		function answerClick(){ 
+			$(".act-answerBT").on("click", function(){
+				$(this).hide();
+				showAnswer();   
+			})
+		} 
+		
+		function retryClick(){ 
+			$(".act-retryBT").on("click", function(){
+				$(this).hide(); 
+				__scope.replayIconClick();
+				__scope.$apply(); 
+			})
+		}
+		
+		function showAnswer(){ 
+			$(".sld-drop").each(function(){	
+				$(".act-showanswer").hide();			
+				var idNO = $( this ).attr("id").split("sld-drop")[1]; 
+				var dragName = $( "#" + "sld-drag" + idNO ); 
+				var dropName = dragName.attr("showAns")
+				dragName.animate( {
+					left: parseInt($("#"+dropName).css("left")) + $("#"+dropName).outerWidth()/2 - dragName.outerWidth()/2,
+					top:  parseInt($("#"+dropName).css("top")) + $("#"+dropName).outerHeight()/2 - dragName.outerHeight()/2+10
+				}, 500, function () { 
+					dragName.css("color", "#77A834");
+				} )
+			});
+			__audio.play();
+		} 
+		function checkValidation(){
+			var rightCount = 0;
+			$(".sld-drag").draggable('disable');
+			$(".sld-drag").css("cursor","default");
+			$(".sld-drag").each(function(){ 
+				if($(this).attr("ans") == $(this).attr("group")){ 
+					
+						$(this).css("color", "#77A834");
+					rightCount++;
+				}else{ 
+					
+						$(this).css("color","#DE2D33");
+				} 
+			});
+			
+			if(rightCount!=$(".sld-drag").length){ 
+				$(".sld-instruction").text(""); 
+				
+					$(".act-answerBT").show();
+					$(".act-showanswer").show();
+					var audioAct = document.getElementById("audio-act");
+					audioAct.src = 'audio/slide12_2_I.mp3'; 
+					audioAct.onended = function() { 
+					
+					};
+				
+			}else{
+				$(".sld-instruction").text("");
+				$(".act-welldone").show();
+				var audioAct = document.getElementById("audio-act");
+				audioAct.src = 'audio/slide12_2_C.mp3'; 
+				audioAct.play();
+				audioAct.onended = function() {
+					__audio.play();
+				};
+			}
+		} 
+	</script>
+</body>
+</html>

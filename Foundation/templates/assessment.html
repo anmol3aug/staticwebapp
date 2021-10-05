@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>slide01</title>  
+	<link rel="stylesheet" type="text/css" href="css/assessment.css">
+	<style>
+		.act-start{
+			display:none; 
+		}
+		
+		.sld-thankyou {
+			position: absolute;
+			width: 1280px;
+			height: 576px;
+			top: 0px;
+			left: 0px;
+			background-color: #fff;
+			z-index: 2;
+			display: none;
+			background-image: url(img/assessment/sld-img13.png);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.sld-thank-txt01{
+			position: absolute;
+			width: 1280px;
+			top: 175px;
+			left: 0px; 
+			font-size: 52px;
+			font-weight: 600;
+			color: #325FB4;
+			text-align: center;
+		}
+		
+		.sld-thank-txt02{
+			position: absolute;
+			top: 521px;
+			width: 1280px;
+			font-size: 12px;
+			color: #325FB4;
+			text-align: center; 
+		}
+		.certificateBT{
+			position: absolute;
+			top: 215px;
+			left: 566px;
+			width: 150px;
+			height: 35px;
+			line-height: 35px;
+			color: #fff;
+			background-color: #F39C1F;
+			text-align: center;
+			cursor: pointer;
+			z-index: 2;
+			border-radius: 10px;
+		}  
+		
+		#thank-img1{ 
+    left: 100px;
+			background-image: url(img/assessment/sld-img15.png);
+			background-repeat: no-repeat;
+			display:none;
+		}
+		
+		#thank-img2{ 
+    left: 475px;
+			background-image: url(img/assessment/sld-img16.png);
+			background-repeat: no-repeat;
+			display:none;
+		}
+		
+		#thank-img3{ 
+    left: 850px;
+			background-image: url(img/assessment/sld-img17.png);
+			background-repeat: no-repeat;
+			display:none;
+		}
+		
+		.thank-img{
+		position: absolute;
+		 top: 350px;
+			width:340px;
+			height:60px;
+			background-position:center;
+			cursor: pointer;
+		}
+		
+		.img-txt{
+			position: absolute;
+			top: 60px;
+			width: 340px;
+			height: 60px;
+			background-position: center;
+			    display: none;
+		}
+		
+		#img-txt1{  
+			background-image: url(img/assessment/sld-img18.png);
+			background-repeat: no-repeat;
+		}
+		
+		#img-txt2{  
+			background-image: url(img/assessment/sld-img19.png);
+			background-repeat: no-repeat;
+		}
+		
+		#img-txt3{  
+			background-image: url(img/assessment/sld-img20.png);
+			background-repeat: no-repeat;
+		}
+		 
+		 .quiz-holder{
+			    position: absolute;
+    top: 390px;
+    left: 420px;
+		 }
+		 
+		 .q1-holder{
+			position:absolute;
+			top:0px;
+			left:-16px;
+			display:none;
+		 }
+		 .q2-holder{
+			position:absolute;
+			top:0px;
+			left:20px; 
+		 }
+		 
+		 .txt{
+		position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #fff;
+    width: 300px;
+		 }
+		 
+		 .opt1, .opt2{
+			 cursor:pointer;
+		 }
+		 
+		 .opt2:hover{
+			background-image: url(img/assessment/sld-img28.png);
+    background-repeat: no-repeat;
+		 }
+		 
+		 .q1-holder .opt1{
+			position: absolute;
+    top: -10px;
+    left: 250px;
+    width: 95px;
+    height: 41px;
+    background-image: url(img/assessment/sld-img26.png);
+    background-repeat: no-repeat;
+		 }
+		 .q1-holder .opt2{
+			position: absolute;
+    top: -10px;
+    left: 370px;
+    width: 95px;
+    height: 41px;
+    background-image: url(img/assessment/sld-img27.png);
+    background-repeat: no-repeat;
+		 } 
+		 
+		.q2-holder .opt1{
+			position: absolute;
+    top: -10px;
+    left: 190px;
+    width: 95px;
+    height: 41px;
+    background-image: url(img/assessment/sld-img26.png);
+    background-repeat: no-repeat;
+		 }
+		 .q2-holder .opt2{
+			position: absolute;
+    top: -10px;
+    left: 300px;
+    width: 95px;
+    height: 41px;
+    background-image: url(img/assessment/sld-img27.png);
+    background-repeat: no-repeat;
+		 } 
+		 .response1{
+			    position: absolute;
+    top: -10px;
+    left: -108px;
+    width: 651px;
+    height: 132px;
+    background-image: url(img/assessment/sld-img22.png);
+    background-repeat: no-repeat;
+	display:none;
+		 }
+		 .response2{
+			position: absolute;
+    top: -10px;
+    left: -95px;
+    width: 634px;
+    height: 108px;
+    background-image: url(img/assessment/sld-img23.png);
+    background-repeat: no-repeat;
+	display:none;
+		 }
+		 .response3{
+			position: absolute;
+    top: -10px;
+    left: -98px;
+    width: 632px;
+    height: 107px;
+    background-image: url(img/assessment/sld-img24.png);
+    background-repeat: no-repeat; 
+	display:none;
+		 }
+	</style>
+</head>
+
+<body ng-app="eLearningApp"> 
+	<!-- Interactive audio -->
+	<audio controls autoplay style="display:none" id="audio-act">	 
+		Your browser does not support the audio element.
+	</audio>
+	<div class="sld-holder" ng-controller="preloading" json="json/assmt-preload.json">
+		<!-- First slide play button for mobile or video--> 
+		<div class="sld-play-audio" style="display:none;"></div>
+		<!-- preload -->
+		<div class="preloading-holder" ng-if="progress !== 100">
+			<!-- <progress class="" value="{{progress}}" max="100">{{progress | number:0}}%</progress> -->
+			<div class="preloading-circle">{{progress | number:0}}%</div>
+		</div>
+		 
+		<!-- slide content -->
+		<div class="slide-content" ng-show="loaded">
+			<div class="sld-subheading"></div>
+			<div class="act-container" ng-controller="assessment">
+			<div class="act-start-page">
+				<div class="act-start-heading"></div>
+				<div class="act-start-txt"></div>
+				<div class="act-start"></div>
+			</div>
+			
+			<div class="act-score-page">
+				<div class="act-score-heading"></div> 
+				<div class="act-score-answer-holder">
+					<div class="act-score-txt01"></div>
+					<div class="act-score-txt01 act-score-answer"></div>
+				</div>  
+				<div class="act-score-retake" ng-click="retakeTest($event)"></div> 
+				<div class="act-score-certificate" ng-click="certificate($event)">Certificate</div> 
+			</div>  
+			 
+			<div class="act-print-page to-print" style="position: absolute; top: 0px; left: 0px; width: 1280px; height: 576px; background-color: #fff; z-index:1; display:none;">  
+				<div class="act-certificate" id="act-certificate" style="position: absolute;top: 0px;left: 175px;">
+					
+					<img class="act-certificate-img" style="width: 953px;height: 547px;" src="img/assessment/sld-img04.png" alt="Certificate">
+					
+					<div class="act-certificate-heading" style="position: absolute;top: 170px;left: 205px;width: 610px;text-align: left;font-family: Arial;font-size: 46px;"><span style="font-family: Arial;font-size: 37px;color: #00338D;"></span></div>
+					
+					<div class="act-certificate-txt" style="position: absolute;top: 267px;left: 57px;width: 610px;font-family:arial;font-size: 20px;line-height: 28px;"></div>
+					
+					<div class="act-certificate-coursename" style="position: absolute;top: 331px;left: 57px;width: 610px; font-weight: bold; font-family:arial;font-size: 20px;"></div>
+					
+					<div class="act-username" style="position: absolute;top: 299px;left: 247px;width: auto;height: auto;font-family: arial;font-size: 20px;border-bottom: 1px solid;">Name User</div>
+					
+					<div class="act-certificate-date" style="position: absolute;top: 435px;left: 67px;width: 250px;height: auto;font-family:arial;font-size: 18px;">Date:</div>
+				</div>   
+			</div>   
+			
+			<div class="act-holder bdr">
+				 <div class="act-choice-subheading sld-subheading"></div>
+				 <div class="act-choice-qst-holder bdr"> 
+					<div class="act-choice-qst-img bdr">{{(questionNO+1)+" "}}</div>
+					<div class="act-choice-qst-txt bdr" ng-bind-html="multipleChoice[questionNO].question | trustHtml">{{multipleChoice[questionNO].question}}</div>
+				 </div>
+
+				<div class="act-choice-list-holder">
+					 <div class="act-choice-holder bdr" answer="{{choice.ans}}" ng-click="isDisabled || choiceButtonClick($event, choice.id)" ng-disabled="isDisabled" ng-repeat="choice in multipleChoice[questionNO].options">
+						<div class="act-choice-img act-choice-img bdr" id="{{choice.id}}"></div>
+						<div class="act-choice-txt bdr"><span class="act-choice-txt-highlight"  ng-bind-html="choice.text | trustHtml"></span></div> 
+					 </div>
+				 </div> 
+				 <div class="act-choice-response"> 
+					 <div class="act-choice-response-txt"></div> 
+				 </div> 
+				 
+				 <div class="act-choice-submit" ng-click="submitClick($event)"></div>
+				 <div class="act-choice-show-answer" ng-click="showAnswerClick($event)"></div>
+				 <div class="act-choice-next" ng-click="nextButtonClick($event)"></div>
+				 <div class="act-print" ng-click="printCertificate('act-certificate')">Print Certificate</div>
+				 <div class="act-send-email">Email Certificate</div>
+			</div> 
+			
+			<div class="sld-thankyou">
+				<div class="sld-thank-txt01"><span style="color:#3a3a3a;"></span><br/><span style="color:#3a3a3a; font-size:28px;"></span><br/><span style="color:#d45f19;"></span></div>
+				<div class="thank-img" id="thank-img1">
+					<div class="img-txt" id="img-txt1"></div>
+				</div>
+				<div class="thank-img" id="thank-img2">
+					<div class="img-txt" id="img-txt2"></div>
+				</div>
+				<div class="thank-img" id="thank-img3">
+					<div class="img-txt" id="img-txt3"></div>
+				</div>
+				
+				<div class="certificateBT" ng-click="printCertificate('act-certificate')">Print Certificate</div>
+				
+				<div class="quiz-holder">
+					<div class="q1-holder">
+						<div class="txt" id="q1">I belong to the Solutions Tower:</div>
+						<div class="opt1"></div>
+						<div class="opt2"></div>
+					</div>
+					
+					<div class="q2-holder">
+						<div class="txt" id="q2">I am a Control Owner:</div>
+						<div class="opt1"></div>
+						<div class="opt2"></div>
+					</div> 
+					<div class="response1"></div> 
+					<div class="response2"></div> 
+					<div class="response3"></div> 
+				</div>
+			</div>
+			
+		</div> 
+	</div> 
+	<!-- slide content end -->
+</div>
+	<script>
+		__gjsonfilePath = "json/assessment.json"; 
+		var refID;
+		var __triggerOnce = true;
+		$(document).ready(function () {  	 
+			loadAudio("audio/assmt/assessment.mp3");  
+			__playAudioButton();
+			cancelAnimationFrame(refID)
+			refID = requestAnimationFrame(animationReady);
+			<!-- quiz -->
+			
+			
+			$(".q2-holder .opt1").on("click", function(){
+				$(".response1").show();
+				console.log("opt1");
+			})
+			
+			$(".q2-holder .opt2").on("click", function(){
+				$(".response2").show();
+				console.log("opt1");
+			})
+		} ); 
+		function getCurTime() {
+			if( __audio.currentTime >= 8.800 && __audio.currentTime <= 9.800){  
+				if(__triggerOnce){
+					__triggerOnce = false;
+					__audio.pause(); 
+					$(".pause-icn").attr("class","play-icn"); 
+					$(".play-icn").css('opacity', 0.2); 
+					$(".pause-disable").show();
+					$(".act-choice-list-holder-patch").hide(); 
+					//old
+					$(".act-start").parent().hide();
+					//__playQuestionAudio(__qstNO); 
+					$("body").off('keyup', __tabKeyRadioSelection); 
+					$("body").on('keyup', __tabKeyRadioSelection);					
+				};
+			};
+		};
+		
+		function firstSlidePlayButton(){
+			if(__gfirstSlidePlayButton){
+				__gfirstSlidePlayButton = false;
+				__playAudioButton();
+			}; 
+		}
+		
+		function loadAudio(sndName){ 
+			__audio = document.getElementById("audio");   
+			if(__gbookmark == "completed" || __assmtComplete == true){ 
+				//__audio.src = "audio/assmt/Assessment_pass.mp3";
+				__audio.src = "audio/assmt/empty-audio.mp3";
+			}else{
+				__audio.src = sndName;
+			}
+			__audio.load();
+		};
+		function animationReady() { 
+			console.log("not cleared-testing");
+			refID = requestAnimationFrame(animationReady)
+			if(__preloadComplete){
+				__preloadComplete = false;
+				console.log("cleared-testing");
+				cancelAnimationFrame(refID);  
+				 playAnimationAudio()  
+			} 
+		}
+		function playAnimationAudio(){
+			var playPromise = __audio.play(); 
+			if (playPromise !== undefined) {
+			  playPromise.then(function() {    
+					__audio.play(); 
+			  }).catch(function(error) {
+			  });
+			}
+			__audio.removeEventListener("timeupdate", getCurTime);  
+			__audio.addEventListener("timeupdate", getCurTime);
+			__ggetCurTime = getCurTime;
+		}
+		function isPlaying(audio) {
+			return !audio.paused;
+		}
+		
+		//old
+		//Once the course is completed successfully it directly show the certificate(when user visit course 2nd time); 
+		function certificate(){
+			$(".act-print-page").show();
+			$(".act-print").show(); 
+			//$(".act-send-email").css("display","block");
+			var date = new Date();
+			//scorm 1.2
+			if(__gscormVersion){
+				var name = getUserName(sname);  
+				$(".act-username").html(name.split(",")[1]+" "+name.split(",")[0]); 
+				$(".act-certificate-date").html("On:   "+date.toDateString());
+			}else{
+				var name = "User,Name"  
+				$(".act-username").html(name.split(",")[1]+" "+name.split(",")[0]);
+				$(".act-certificate-date").html("On:  "+date.toDateString());
+			}
+			// 
+		}
+		$(".act-send-email").on("click", function(){
+			//var link = "mailto:target@example.com"; 
+			var link = "mailto:"+getUserId()+ ',eucteam@srilankan.com'+"?subject=Information Security Policy Awareness - Certificate &body=Please attach your certificate";  
+			 // In addition to this you can add subject or body as parameter . For e.g. 
+			 // "mailto:target@example.com?subject=test subject&body=my text"
+			window.location.href = link;
+		}); 
+		
+		$(".certificateBT").on("click", function(){
+			   $(".asppage").load("certificate.aspx");
+		})
+		var idNO;
+		$(".thank-img").on("click", function(){
+			  idNO = $(this).attr("id").split("thank-img")[1];
+			  console.log(idNO);
+			  $("#img-txt" + idNO).show();   
+		}); 
+	</script>
+</body>
+</html>
